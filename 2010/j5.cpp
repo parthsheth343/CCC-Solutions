@@ -5,36 +5,20 @@ vector<vector<int>> nextvec(int a, int b) {
     vector<vector<int>> tempvec;
     tempvec.clear();
     if (a-2>=0){
-        if (b-1>=0) {
-            tempvec.push_back({a-2, b-1});
-        }
-        if (b+1<=7) {
-            tempvec.push_back({a-2, b+1});
-        }
+        if (b-1>=0) {tempvec.push_back({a-2, b-1});}
+        if (b+1<=7) {tempvec.push_back({a-2, b+1});}
     }
     if (a-1>=0){
-        if (b-2>=0) {
-            tempvec.push_back({a-1, b-2});
-        }
-        if (b+2<=7) {
-            tempvec.push_back({a-1, b+2});
-        }
+        if (b-2>=0) {tempvec.push_back({a-1, b-2});}
+        if (b+2<=7) {tempvec.push_back({a-1, b+2});}
     }
     if (a+2<=7){
-        if (b-1>=0) {
-            tempvec.push_back({a+2, b-1});
-        }
-        if (b+1<=7) {
-            tempvec.push_back({a+2, b+1});
-        }
+        if (b-1>=0) {tempvec.push_back({a+2, b-1});}
+        if (b+1<=7) {tempvec.push_back({a+2, b+1});}
     }
     if (a+1<=7){
-        if (b-2>=0) {
-            tempvec.push_back({a+1, b-2});
-        }
-        if (b+2<=7) {
-            tempvec.push_back({a+1, b+2});
-        }
+        if (b-2>=0) {tempvec.push_back({a+1, b-2});}
+        if (b+2<=7) {tempvec.push_back({a+1, b+2});}
     }
     return tempvec;
 }
