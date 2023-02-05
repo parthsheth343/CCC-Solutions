@@ -4,29 +4,43 @@ using namespace std;
 
 int main() {
     ios_base::sync_with_stdio(0);
-
-    vector<int> current; vector<int> diff;
-    int n, v, t;
-    while (true) {
-        current.clear();
-        diff.clear();
-
+    cin.tie(0);
+    int n;
+    int temp[20];
+    int dif[19];
+    int cyc[19];
+    bool stop = false;
+    for (int i = 0; i < 20; i++) temp[i] = 0;
+    for (int i = 0; i < 19; i++) dif[i] = 0;
+    for (int i = 0; i < 19; i++) cyc[i] = 0;
+    while(true) {
         cin >> n;
-        if (n==0) {break;} else if (n==1) {cin >> v; cout << 0<< endl;}
-        else {
-            for (int i = 0; i < n; i++) {cin >>t; current.push_back(t);}
-            for (int i = 0; i < n-1; i++) {diff.push_back(current[i+1]-current[i]);}
-            
-            for (int i = 1; i <= diff.size(); i++) { //The current cycle length is i
-                bool on = true;
-                if (i!= diff.size()) {
-                    for (int j =0; j < diff.size()-i; j++) { //The current iterator in the diff loop is j
-                        if (diff[j]!=diff[j+i]) {break;} else {;}
-                        if (j == diff.size()-i-1) {cout << i<<endl; on = false; break;} else {;}
+        if (n == 0) break;
+        if (n == 1) {
+            cin >> temp[0];
+            cout << 0 << endl;
+            continue;
+        }
+        for (int i = 0; i < n; i++) cin >> temp[i];
+        for (int i = 0; i < n-1; i++) dif[i] = temp[i+1] - temp[i];
+        for (int i = 0; i < n-1; i++) {
+            cyc[i] = dif[i];
+            for (int j = 0; j < i+1; j++) {
+                for (int k = j; k < n-1; k+=(i+1)) {
+                    if (dif[k] != cyc[j]) {
+                        stop = true;
+                        break;
                     }
-                } else {cout<<i<<endl;}
-                if (on == false) {break;}
-            }      
+                }
+                if (stop) break;
+            }
+            if (stop) {
+                stop = false;
+                continue;
+            } else {
+                cout << i+1 << endl;
+                break;
+            }
         }
     }
 }

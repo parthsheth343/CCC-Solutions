@@ -1,3 +1,4 @@
+// 15/15 points
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -9,6 +10,8 @@ int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
 
-    //incomplete
+    int s, m, l;
+    cin >> s >> m >> l;
+    if (s+2*m+3*l >= 10) cout << "happy" << endl; else cout << "sad";
     
 }

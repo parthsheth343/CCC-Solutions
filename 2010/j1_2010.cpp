@@ -3,53 +3,21 @@ using namespace std;
 
 int main() {
   int fingers;
-  int total;
+  int ans = 0;
   cin >> fingers;
-  switch ( fingers ) {
-    case 1: {
-        total = 1;
-        break;
-      }
-    case 2: {
-        total = 2;
-        break;
-      }
-    case 3: {
-        total = 2;
-        break;
-      }
-    case 4: {
-        total = 3;
-        break;
-      }
-    case 5: {
-        total = 3;
-        break;
-      }
-    case 6: {
-        total = 3;
-        break;
-      }
-    case 7: {
-        total = 2;
-        break;
-      }
-    case 8: {
-        total = 2;
-        break;
-      }
-    case 9: {
-        total = 1;
-        break;
-      }
-    case 10: {
-        total = 1;
-        break;
-      }
+  int r, l = 0;
+  if (fingers > 5) {
+    r = 5;
+    l = fingers - r;
   }
+  else r = fingers;
 
-    
+  while(r >= l) {
+    r--;
+    l++;
+    ans++;
+  }
   
-  cout << total;
+  cout << ans;
   
 }
