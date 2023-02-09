@@ -1,4 +1,4 @@
-///////////////////    only gives 14/15 points need to fix - too slow for last test case 
+// 15/15 points
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -11,10 +11,13 @@ string si, sf;
 int steps;
 bool found = false;
 vector<tuple<int, int, string>> ans;
+unordered_map<string, int> tried;
 
 //Basically just use a dfs to generate a string after S moves
 //and check if it is the string we want
 void dfs(int move, string curstring) {
+
+    if (tried[curstring + to_string(move)] == 7) return;
 
     if (move == steps) {
 
@@ -39,6 +42,7 @@ void dfs(int move, string curstring) {
             }
         }
     }
+    tried[curstring + to_string(move)] = 7;
 }
 
 int main() {
