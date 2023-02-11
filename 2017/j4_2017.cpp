@@ -1,3 +1,4 @@
+// 15/15 points - bad solution 
 #include <bits/stdc++.h>
 using namespace std;
 
