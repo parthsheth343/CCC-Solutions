@@ -1,3 +1,4 @@
+// 15/15 points
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -10,30 +11,24 @@ int main() {
     cin.tie(0);
 
     int arr[4][4];
-    for (int i = 0; i < 4; i++) for (int j = 0; j < 4; j++) cin >> arr[i][j];
-    int sum = arr[0][0] + arr[0][1] + arr[0][2] + arr[0][3];
-    int c = 0;
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
-            c+= arr[i][j];
+            cin >> arr[i][j];
         }
-        if (c != sum) {
-
-            cout << "not magic";
-            return 0;
-        }
-        c=0;
     }
-    for (int j = 0; j < 4; j++) {
-        for (int i = 0; i < 4; i++) {
-            c+=arr[i][j];
-        }
-        if (c != sum) {
+    int sum = arr[0][0] + arr[0][1] + arr[0][2] + arr[0][3];
 
+    for (int i = 0; i < 4; i++) {
+        if (arr[i][0] + arr[i][1] + arr[i][2] + arr[i][3] != sum) {
             cout << "not magic";
             return 0;
         }
-        c=0;
+    }
+    for (int i = 0; i < 4; i++) {
+        if (arr[0][i] + arr[1][i] + arr[2][i] + arr[3][i] != sum) {
+            cout << "not magic";
+            return 0;
+        }
     }
     cout << "magic";
 }

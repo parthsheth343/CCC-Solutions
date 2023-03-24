@@ -1,3 +1,4 @@
+// 15/15 points
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -8,25 +9,19 @@ using namespace std;
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
+    
+    string word; cin >> word;
+    string q;
+    string p;
+    int ans = 1;
 
-    string s;
-    cin >> s;
-    int t = s.size();
-    string q; // substring  
-    string z = "";
-    int ml = -10; // max length;
-    for (int i = 0; i < t; i++) {
-        for (int j = i; j <= t - i; j++) {
-            q = s.substr(i, j);
-            for (int k = q.size()-1; k >= 0; k--) {
-                z += q[k];
-            }
-            int p = q.size();
-            if (z == q) {
-                ml = max(ml, p);
-            }
-            z = "";
+    for (int i = 0; i < word.size() - 1; i++) {
+        for (int j = 1; i + j <= word.size(); j++) {
+            q = word.substr(i, j);
+            p = q;
+            reverse(p.begin(), p.end());
+            if (q == p) ans = max(ans, (int) p.size());
         }
     }
-    cout << ml;
+    cout << ans;
 }

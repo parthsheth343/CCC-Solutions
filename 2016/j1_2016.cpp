@@ -1,3 +1,4 @@
+// 15/15 points
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -9,14 +10,15 @@ int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
 
-    int w=0;
-    char r;
+    int wins =0;
+    char c;
     for (int i = 0; i < 6; i++) {
-        cin >> r;
-        if (r == 'W') w++;
+        cin >> c;
+        if (c == 'W') wins++;
     }
-    if (w >=5) cout << 1;
-    else if (w >=3) cout << 2;
-    else if (w >= 1) cout << 3;
-    else cout << -1;    
+    if (wins >= 5) cout << 1;
+    else if (wins >= 3) cout << 2;
+    else if (wins >= 1) cout << 3;
+    else cout << -1;
+     
 }
