@@ -1,5 +1,5 @@
 // 15/15 
-// messy code, wrote during contest
+// very messy code, wrote during contest
 #include <bits/stdc++.h>
 using namespace std;
 

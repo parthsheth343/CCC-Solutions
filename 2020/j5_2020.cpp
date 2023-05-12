@@ -1,4 +1,4 @@
-// 15/15 points - can be made faster by not using dfs
+// 15/15 
 #include <bits/stdc++.h>
 using namespace std;
 
