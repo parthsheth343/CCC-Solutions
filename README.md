@@ -1,3 +1,4 @@
 # CCC-Solutions
 
-So far all CCC Junior Problems up to 2023 have been completed
+Finished all CCC Junior Problems up to 2023. 
+Working on Senior Problems. 
